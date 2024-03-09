@@ -1,4 +1,3 @@
-
 const loaderContainer = document.querySelector(".loader-container");
 const pageContent = document.querySelector("#main");
 
@@ -6,8 +5,10 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         loaderContainer.classList.add("hidden");
         pageContent.classList.add("visible");
-    }, 2000);
+    }, 1000);
 });
+
+
 
 /* -- Carousel Navigation -- */
 
@@ -47,6 +48,8 @@ const handleRightClick = () => {
   });
 };
 
+
+
 /* -- Mobile Nav Toggle -- */
 
 const nav = document.querySelector("nav");
@@ -65,20 +68,111 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
 
 
 
-
-let locoScroll = new LocomotiveScroll({
-  el: document.querySelector('[data-scroll-container]'),
-  smooth: true
+const lenis = new Lenis({
+  duration: 1.5,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
 });
 
-new ResizeObserver(() => locoScroll.update()).observe(document.querySelector("[data-scroll-container]"))
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+};
+requestAnimationFrame(raf);
+
+
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);  
+
+var tl = gsap.timeline();
+
+tl.to('body', {
+  scrollTrigger: {
+    trigger: "navheader",
+    scrub: true,
+    start: "top 95%",
+    end: "bottom 60%",
+  },
+  duration: 1,
+  backgroundColor: '#010000',
+});
+
+tl.to('.moving-container', {
+  scrollTrigger: {
+    trigger: "navheader",
+    scrub: true,
+    start: "top 95%",
+    end: "bottom 60%"
+  },
+  duration: 1,
+  color: '#000',
+  opacity: 1
+});
+
+tl.from('#page-2', {
+  scrollTrigger: {
+    trigger: "navheader",
+    scrub: true,
+    start: "top 95%",
+    end: "top 50%",
+  },
+  duration: 1,
+  opacity: 0.25
+});
+
+tl.to('#page-2', {
+  scrollTrigger: {
+    trigger: "#page-2",
+    scrub: true,
+    start: "bottom 80%",
+    end: "bottom 30%"
+  },
+  duration: 1,
+  backgroundColor: '#eeefef'
+});
+
+tl.to('maincontent>article>.article-nav-section', {
+  scrollTrigger: {
+    trigger: "#page-2",
+    scrub: true,
+    start: "bottom 74%",
+    end: "bottom 24%"
+  },
+  duration: 1,
+  backgroundColor: '#eeefef',
+});
+
+tl.from('#page-3', {
+  scrollTrigger: {
+    trigger: "#page-3",
+    scrub: true,
+    start: "top 80%",
+    end: "top 30%"
+  },
+  duration: 1,
+  opacity: 0,
+  backgroundColor: '#010000',
+});
+
+tl.from('#cool-ball', {
+  scrollTrigger: {
+    trigger: "#page-3",
+    scrub: true,
+    start: "top 60%",
+    end: "top 40%"
+  },
+  y: 100,
+  duration: 1,
+  delay: 2,
+  opacity: 0
+});
+
+ScrollTrigger.refresh();
+
+
 
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 scrollToTopBtn.addEventListener("click", () => {
-    locoScroll.scrollTo(document.querySelector("[data-scroll-container]"), {
-        offset: 0,
-        duration: 750
-    });
+  gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2" });
 });
 
 
