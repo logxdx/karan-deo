@@ -69,8 +69,8 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
 
 
 const lenis = new Lenis({
-  duration: 1.5,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+  duration: 1.25,
+  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -10 * t))
 });
 
 function raf(time) {
@@ -89,8 +89,8 @@ tl.to('body', {
   scrollTrigger: {
     trigger: "navheader",
     scrub: true,
-    start: "top 95%",
-    end: "bottom 60%",
+    start: "top 80%",
+    end: "bottom 20%",
   },
   duration: 1,
   backgroundColor: '#010000',
@@ -100,12 +100,11 @@ tl.to('.moving-container', {
   scrollTrigger: {
     trigger: "navheader",
     scrub: true,
-    start: "top 95%",
-    end: "bottom 60%"
+    start: "top 80%",
+    end: "bottom 20%"
   },
   duration: 1,
   color: '#000',
-  opacity: 1
 });
 
 tl.from('#page-2', {
@@ -113,9 +112,8 @@ tl.from('#page-2', {
     trigger: "navheader",
     scrub: true,
     start: "top 95%",
-    end: "top 50%",
+    end: "top 60%",
   },
-  duration: 1,
   opacity: 0.25
 });
 
@@ -123,30 +121,18 @@ tl.to('#page-2', {
   scrollTrigger: {
     trigger: "#page-2",
     scrub: true,
-    start: "bottom 80%",
-    end: "bottom 30%"
+    start: "bottom 60%",
+    end: "bottom 40%"
   },
-  duration: 1,
   backgroundColor: '#eeefef'
-});
-
-tl.to('maincontent>article>.article-nav-section', {
-  scrollTrigger: {
-    trigger: "#page-2",
-    scrub: true,
-    start: "bottom 74%",
-    end: "bottom 24%"
-  },
-  duration: 1,
-  backgroundColor: '#eeefef',
 });
 
 tl.from('#page-3', {
   scrollTrigger: {
     trigger: "#page-3",
     scrub: true,
-    start: "top 80%",
-    end: "top 30%"
+    start: "top 60%",
+    end: "top 40%"
   },
   duration: 1,
   opacity: 0,
@@ -169,7 +155,12 @@ tl.from('#cool-ball', {
 ScrollTrigger.refresh();
 
 
+var contact_btn = document.querySelectorAll(".contact-btn");
+contact_btn.forEach(button => button.addEventListener("click", () => {
+  gsap.to(window, { duration: 1, scrollTo: "#page-3", ease: "power2" });
+}));
 
+// Scroll to top button
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 scrollToTopBtn.addEventListener("click", () => {
   gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2" });
