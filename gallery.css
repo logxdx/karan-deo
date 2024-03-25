@@ -20,7 +20,7 @@ body::-webkit-scrollbar {
     display: flex;
     inset: 0;
     z-index: 9999;
-    background-color: #000;
+    background-color: #afaf9d;
     justify-content: center;
     align-items: center;
     transition: 0.5s ease-out;
@@ -79,15 +79,14 @@ svg text.text-body {
 
 nav {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1;
+    padding: 2rem 3rem;
+    z-index: 10;
 }
 
 nav a {
     text-decoration: none;
     color: black;
-    font-size: clamp(0.25rem, 2vw, 1.5rem);
+    font-size: clamp(0.5rem, 5vw, 3rem);
 }
 
 #heroimg {
@@ -238,9 +237,9 @@ img {
 
 .gallery {
     display: grid;
-    grid-gap: 50px;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-auto-rows: 550px;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 300px;
     grid-auto-flow: dense;
 }
 .gallery > div {
@@ -298,7 +297,7 @@ img {
     transform: translate(-50%, -30%);
     z-index: 3;
     color: transparent;
-    font-size: clamp(1rem, 8vw, 4rem);
+    font-size: clamp(1rem, 5vw, 3rem);
     font-weight: 700;
     font-family: "Syne", "Bricolage Grotesque", "Poppins";
     text-transform: uppercase;
@@ -314,8 +313,6 @@ img {
 }
 
 
-
-
 .fancybox__container {
     --fancybox-color: #0d0c22;
     --fancybox-bg: #fff;
@@ -326,10 +323,10 @@ img {
   }
   
   .fancybox__toolbar {
-    --f-button-bg: #f3f3f4;
+    --f-button-bg: #131315;
     --f-button-hover-bg: #e7e7e9;
     --f-button-active-bg: #e7e7e9;
-    --f-button-color: #0d0c22;
+    --f-button-color: #f3f3f3;
     --f-button-hover-color: #0d0c22;
   
     --f-button-border-radius: 8px;
@@ -339,8 +336,8 @@ img {
   
     --f-button-svg-stroke-width: 1.5;
     --f-button-svg-filter: none;
-  
-    padding: 30px;
+
+    padding: 20px 40px;
     z-index: 10;
   }
   
@@ -359,7 +356,7 @@ img {
     --f-thumb-offset: 4px;
   
     padding: 10px 100px 10px 26px;
-    border-bottom: 2px solid #f3f3f4;
+    border-bottom: 2px solid #000000;
   }
   
   /* Align thumbnails on right side if not draggable */

@@ -1,6 +1,7 @@
 const loaderContainer = document.querySelector(".loader-container");
 const pageContent = document.querySelector("#main");
 const heroimg = document.querySelector("#heroimg");
+const back = document.querySelector(".nav-link i");
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -8,7 +9,7 @@ window.addEventListener("load", () => {
     pageContent.classList.add("visible");
     heroimg.style.height = "60%";
     heroimg.style.opacity = "1";
-  }, 1000);
+  }, 1200);
 });
 
 
@@ -19,7 +20,7 @@ const tl = gsap.timeline();
 
 tl.from("#main-h1", {
   duration: 1.25,
-  delay: 1.25,
+  delay: 1.5,
   opacity: 0,
 })
   .from("#main-p", {
@@ -57,3 +58,20 @@ scrollToTopBtn.addEventListener("click", () => {
   gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2" });
 });
 
+// $(document).ready(function() {
+//   $("[data-fancybox]").fancybox({
+//     closeExisting: false,
+//     loop: true,
+//     keyboard: true,
+//     buttons: ["slideShow", "zoom", "share", "thumbs", "close"],
+//     arrows: true,
+//     infobar: false,
+//     animationDuration: 400,
+//     animationEffect: "fade",
+//     transitionDuration: 800,
+//     transitionEffect: "fade",
+//     thumbs: {
+//       autoStart: true,
+//     },
+//   });
+// });

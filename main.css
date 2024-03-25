@@ -80,7 +80,7 @@ svg text {
 
 svg text.text-body {
     stroke: white;
-    animation: 1.25s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) loader;
+    animation: 1.5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) loader;
 }
 
 @keyframes loader {

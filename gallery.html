@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/android-chrome-512x512.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link rel="stylesheet" href="gallery.css">
     <title>Karan Deo</title>
 </head>
@@ -23,12 +23,12 @@
 
         <div id="nav">
             <nav>
-                <a href="/" class="nav-link">home</a>
+                <a href="/" class="nav-link"><i class="fa-solid fa-left-long fa-fade" style="color: #5b443d;"></i></a>
             </nav>
         </div>
 
         <div id="heroimg">
-            <img src="./images/works/6.webp" alt="hero image"  class="hero-image">
+            <img src="./images/works/6.webp" alt="hero image" class="hero-image">
             <div class="hero-text">
                 <h1>gallery</h1>
             </div>
@@ -41,7 +41,7 @@
                     & Wanderer</h1>
             </div>
 
-            
+
             <div id="main-p">
                 <p>When words become unclear, I shall focus with photographs.
                     When images become inadequate, I shall be content with silence.
@@ -206,11 +206,52 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
     <script src="./gallery.js"></script>
+    <script>
+
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            compact: false,
+            idle: false,
+            infobar: true,
+            animated: true,
+            showClass: false,
+            hideClass: false,
+            contentClick: false,
+            dragToClose: false,
+
+            Images: {
+                zoom: false,
+            },
+
+            Toolbar: {
+                display: {
+                    left: ['prev', 'next'],
+                    middle: ['slideshow'],
+                    right: ['close'],
+                },
+            },
+
+            Thumbs: {
+                type: 'modern',
+                Carousel: {
+                    center: function () {
+                        return this.contentDim < this.viewportDim;
+                    },
+                },
+            },
+
+            Carousel: {
+                // Remove the navigation arrows
+                Navigation: false,
+            },
+        });
+
+    </script>
+
 </body>
 
 </html>

@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         loaderContainer.classList.add("hidden");
         pageContent.classList.add("visible");
-    }, 1000);
+    }, 1200);
 });
 
 
