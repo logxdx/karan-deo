@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body::-webkit-scrollbar {
     display: none;
 }
@@ -93,7 +97,7 @@ nav a {
     height: 0vh;
     opacity: 0;
     border-radius: 0 0 3rem 3rem;
-    transition: all 0.75s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
     transition-delay: 1.25s;
 }
 
@@ -102,15 +106,14 @@ nav a {
     height: 100%;
     object-fit: cover;
     object-position: center 90%;
-    filter: blur(5px) grayscale(80%);
+    filter: blur(50px);
     border: none;
     outline: none;
     opacity: 1;
     border-radius: 0 0 3rem 3rem;
 }
 
-#heroimg img:hover {
-    filter: blur(0px) grayscale(0%);
+#heroimg:hover img {
     transform: none;
 }
 
@@ -176,7 +179,7 @@ nav a {
     border-radius: 1px;
     background-color: #674e6c;
     opacity: 0.5;
-    margin-block: 3rem;
+    margin-block: 2rem;
 }
 
 img {
@@ -184,19 +187,15 @@ img {
     max-width: 100%;
     object-fit: cover;
     object-position: center;
-    filter: grayscale(80%);
     display: inline-block;
-    transition: all 0.3s ease-in-out;
-}  
-
-img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05);
+    transition: all 0.4s ease-in-out;
+    border-radius: 10px;
 }
+
 
 .gallery-container {
     position: relative;
-    padding: 1rem;
+    padding: 3rem;
     /* visibility: hidden; */
 }
 
@@ -206,26 +205,46 @@ img:hover {
     justify-content: center;
     align-items: center;
     padding: clamp(0.5rem, 2vw, 3rem) clamp(0.5rem, 2vw, 3rem);    
+    padding-top: 0;
+    cursor: default;
 }
 
 #gallerytxt h1 {
     font-size: clamp(1rem, 5vw, 4rem);
-    font-family: "Unbounded", "Syne", "Bricolage Grotesque", "Poppins";
-    font-weight: 300;
+    font-family: "Syne", "Bricolage Grotesque", "Poppins";
+    font-weight: 500;
     text-transform: capitalize;
     color: #5b443d;
     /* color: #674e6c; */
     padding-bottom: 3rem;
 }
 
+#gallerytxt h1::after {
+    content: "";
+    position: absolute;
+    bottom: clamp(0.5rem, 5vw, 4rem);
+    right: 0;
+    width: 0%;
+    height: 0.25rem;
+    border-radius: 1rem;
+    background-color: #5b443d;
+    transition: all 0.5s ease-in-out;
+}
+
+#gallerytxt:hover h1::after {
+    width: 100%;
+    left: 0;
+}
+
 .gallery {
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 450px;
+    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 550px;
     grid-auto-flow: dense;
 }
 .gallery > div {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +252,32 @@ img:hover {
     background-position: center;
     overflow: hidden;
     border-radius: 10px;
+    transition: all 0.4s ease-in-out;
 }
+
+.gallery > div:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+    z-index: 2;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
 .gallery > div > img {
     width: 100%;
     height: 100%;
@@ -247,3 +291,83 @@ img:hover {
     grid-column: span 2;
 }
 
+.zoom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 3;
+    color: transparent;
+    font-size: clamp(1rem, 8vw, 4rem);
+    font-weight: 700;
+    font-family: "Syne", "Bricolage Grotesque", "Poppins";
+    text-transform: uppercase;
+    pointer-events: none;
+    -webkit-text-stroke: 2px white;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.gallery-item:hover .zoom {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+
+
+
+.fancybox__container {
+    --fancybox-color: #0d0c22;
+    --fancybox-bg: #fff;
+    --f-spinner-color-1: rgba(0, 0, 0, 0.1);
+    --f-spinner-color-2: rgba(17, 24, 28, 0.8);
+  
+    flex-direction: column-reverse;
+  }
+  
+  .fancybox__toolbar {
+    --f-button-bg: #f3f3f4;
+    --f-button-hover-bg: #e7e7e9;
+    --f-button-active-bg: #e7e7e9;
+    --f-button-color: #0d0c22;
+    --f-button-hover-color: #0d0c22;
+  
+    --f-button-border-radius: 8px;
+  
+    --f-button-svg-width: 20px;
+    --f-button-svg-height: 20px;
+  
+    --f-button-svg-stroke-width: 1.5;
+    --f-button-svg-filter: none;
+  
+    padding: 30px;
+    z-index: 10;
+  }
+  
+  .fancybox__slide {
+    padding: 12px 0px;
+  }
+  
+  .fancybox__thumbs.is-classic {
+    --f-thumb-gap: 3px;
+    --f-thumb-width: 88px;
+    --f-thumb-height: 66px;
+    --f-thumb-opacity: 1;
+    --f-thumb-outline: 3px;
+    --f-thumb-outline-color: #ea4c89;
+    --f-thumb-border-radius: 6px;
+    --f-thumb-offset: 4px;
+  
+    padding: 10px 100px 10px 26px;
+    border-bottom: 2px solid #f3f3f4;
+  }
+  
+  /* Align thumbnails on right side if not draggable */
+  .f-thumbs__viewport:not(.is-draggable) .f-thumbs__track {
+    justify-content: flex-end;
+  }
+  
+  .f-thumbs__slide__img {
+    border-radius: 7px;
+  }
+  

@@ -3,12 +3,12 @@ const pageContent = document.querySelector("#main");
 const heroimg = document.querySelector("#heroimg");
 
 window.addEventListener("load", () => {
-    setTimeout(() => {
-        loaderContainer.classList.add("hidden");
-        pageContent.classList.add("visible");
-        heroimg.style.height = "60%";
-        heroimg.style.opacity = "1";
-    }, 1000);
+  setTimeout(() => {
+    loaderContainer.classList.add("hidden");
+    pageContent.classList.add("visible");
+    heroimg.style.height = "60%";
+    heroimg.style.opacity = "1";
+  }, 1000);
 });
 
 
@@ -22,17 +22,17 @@ tl.from("#main-h1", {
   delay: 1.25,
   opacity: 0,
 })
-.from("#main-p", {
-  duration: 1.0,
-  opacity: 0,
-  delay: -0.5,
-});
+  .from("#main-p", {
+    duration: 1.0,
+    opacity: 0,
+    delay: -0.5,
+  });
 
 gsap.from(".gallery-container", {
   scrollTrigger: {
     trigger: ".gallery-container",
-    start: "top 95%",
-    end: "top 60%",
+    start: "top 90%",
+    end: "top 50%",
     scrub: true,
   },
   duration: 1.0,
@@ -43,8 +43,8 @@ gsap.from(".gallery-container", {
 gsap.to("#maintxt", {
   scrollTrigger: {
     trigger: "#hr",
-    start: "top 50%",
-    end: "top 5%",
+    start: "top 40%",
+    end: "top 0%",
     scrub: true,
   },
   duration: 1.0,

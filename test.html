@@ -1,34 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Karan Deo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logxdx - Personal Webpage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            background-image: url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23dddddd" fill-opacity="0.2"%3E%3Cpath d="M80 32.832c0-17.673-14.327-32-32-32-17.674 0-32 14.327-32 32 0 7.214 2.393 13.85 6.399 19.222-2.961 2.11-5.068 5.82-5.068 10.146 0 6.628 5.372 12 12 12h40c6.628 0 12-5.372 12-12 0-4.325-2.107-8.036-5.068-10.146 4.006-5.372 6.399-11.008 6.399-19.222z" /%3E%3Cpath d="M64 80c0-4.418-3.582-8-8-8h-8c-4.418 0-8 3.582-8 8 0 4.418 3.582 8 8 8h8c4.418 0 8-3.582 8-8z" /%3E%3C/g%3E%3C/svg%3E');
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 40px; /* Increased font size for h1 */
+            margin-bottom: 30px;
+        }
+        .section {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.5s;
+            margin-bottom: 30px;
+        }
+        .section-content {
+            margin-left: 20px;
+        }
+        .section-header {
+            font-size: 30px; /* Increased font size for section headers */
+            margin-bottom: 10px;
+            color: #555;
+            position: relative;
+            display: inline-block;
+            cursor: default; /* Set cursor to default */
+        }
+        .section-header::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background-color: #ff7e5f;
+            transition: width 0.3s ease;
+        }
+        .section-header:hover::after {
+            width: 100%;
+        }
+        .skill-item {
+            margin-bottom: 10px;
+        }
+        .skill-item h3 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .skill-item p {
+            color: #555;
+        }
+        p {
+            line-height: 1.6;
+            color: #444;
+            font-size: 18px; /* Increased font size for paragraphs */
+        }
+        a {
+            color: #ff7e5f;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #d9583b;
+        }
+
+        /* Media queries for mobile responsiveness */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            .section-header {
+                font-size: 24px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
     <div class="container">
-      <h1 class="logo">Say Hello LogXdx.Design</h1>
+        <h1>Hello, I'm logxdx</h1>
+        <div class="section">
+            <div class="section-header">About Me</div>
+            <div class="section-content">
+                <p>I'm a second-year student at IIT Delhi, passionate about photography, development, and exploring new places.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">Skills</div>
+            <div class="section-content">
+                <div class="skill-item">
+                    <h3>Programming Languages</h3>
+                    <p>Python, C/C++, HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Frameworks/Libraries</h3>
+                    <p>ReactJS</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Projects</h3>
+                    <p>Created games in Python, developed an advanced document search tool project under Prof. Rahul Garg, built a CLI math calculator that performs a variety of calculations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">Interests</div>
+            <div class="section-content">
+                <p>Aside from academics and programming, I love capturing moments through my camera lens and embarking on adventures to discover the world.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-header">Contact</div>
+            <div class="section-content">
+                <p>You can reach me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            </div>
+        </div>
     </div>
-  </header>
-  <main class="main">
-    <div class="container">
-      <section class="intro">
-        <h2>Welcome to LogXdx.Design</h2>
-        <p>We are a passionate team of designers who specialize in creating unique and innovative logos.</p>
-      </section>
-      <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: logxdx158@gmail.com</p>
-        <p>Connect: Instagram, Linkedin, Github</p>
-      </section>
-    </div>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2023 LogXdx.Design. All Rights Reserved.</p>
-    </div>
-  </footer>
 </body>
 </html>
+  

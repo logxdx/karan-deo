@@ -39,6 +39,7 @@
 
 html {
     font-size: 14px;
+    scroll-snap-type: y proximity; 
 }
 
 body {
@@ -125,7 +126,7 @@ svg text.text-body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2.5rem 2rem;
+    padding: 2rem 3rem;
 }
 
 #navLeft a {
@@ -167,7 +168,7 @@ svg text.text-body {
 }
 
 #moving-text h1 {
-    font-size: 15rem;
+    font-size: 16rem;
     font-family: "Bricolage Grotesque", sans-serif;
     text-transform: uppercase;
     display: inline-block;

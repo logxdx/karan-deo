@@ -69,7 +69,7 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
 
 
 const lenis = new Lenis({
-  duration: 1.25,
+  duration: 1.28,
   easing: (t) => Math.min(1, 1.01 - Math.pow(2, -10 * t))
 });
 
@@ -89,8 +89,8 @@ tl.to('body', {
   scrollTrigger: {
     trigger: "navheader",
     scrub: true,
-    start: "top 80%",
-    end: "bottom 20%",
+    start: "top 60%",
+    end: "top 20%",
   },
   duration: 1,
   backgroundColor: '#010000',
@@ -100,8 +100,8 @@ tl.to('.moving-container', {
   scrollTrigger: {
     trigger: "navheader",
     scrub: true,
-    start: "top 80%",
-    end: "bottom 20%"
+    start: "top 60%",
+    end: "top 20%"
   },
   duration: 1,
   color: '#000',
@@ -112,7 +112,7 @@ tl.from('#page-2', {
     trigger: "navheader",
     scrub: true,
     start: "top 95%",
-    end: "top 60%",
+    end: "top 50%",
   },
   opacity: 0.25
 });
@@ -122,7 +122,7 @@ tl.to('#page-2', {
     trigger: "#page-2",
     scrub: true,
     start: "bottom 60%",
-    end: "bottom 40%"
+    end: "bottom 10%"
   },
   backgroundColor: '#eeefef'
 });
@@ -132,7 +132,7 @@ tl.from('#page-3', {
     trigger: "#page-3",
     scrub: true,
     start: "top 60%",
-    end: "top 40%"
+    end: "top 10%"
   },
   duration: 1,
   opacity: 0,
