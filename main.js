@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         loaderContainer.classList.add("hidden");
         pageContent.classList.add("visible");
-    }, 1200);
+    }, 1500);
 });
 
 
@@ -52,7 +52,7 @@ const handleRightClick = () => {
 
 /* -- Mobile Nav Toggle -- */
 
-const nav = document.querySelector("nav");
+const nav = document.querySelector("navheader");
 
 const handleNavToggle = () => {  
   nav.dataset.transitionable = "true";
@@ -66,104 +66,56 @@ window.matchMedia("(max-width: 800px)").onchange = e => {
   nav.dataset.toggled = "false";
 };
 
+(raf);
 
 
 const lenis = new Lenis({
-  duration: 1.28,
-  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -10 * t))
+  duration: 1.75,
+  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -8 * t))
 });
 
 function raf(time) {
   lenis.raf(time);
   requestAnimationFrame(raf);
 };
-requestAnimationFrame(raf);
-
+requestAnimationFrame
 
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);  
 
 var tl = gsap.timeline();
 
-tl.to('body', {
+tl.to('#page-1', {
   scrollTrigger: {
     trigger: "navheader",
     scrub: true,
-    start: "top 60%",
-    end: "top 20%",
-  },
-  duration: 1,
-  backgroundColor: '#010000',
-});
-
-tl.to('.moving-container', {
-  scrollTrigger: {
-    trigger: "navheader",
-    scrub: true,
-    start: "top 60%",
-    end: "top 20%"
-  },
-  duration: 1,
-  color: '#000',
-});
-
-tl.from('#page-2', {
-  scrollTrigger: {
-    trigger: "navheader",
-    scrub: true,
-    start: "top 95%",
-    end: "top 50%",
-  },
-  opacity: 0.25
-});
-
-tl.to('#page-2', {
-  scrollTrigger: {
-    trigger: "#page-2",
-    scrub: true,
-    start: "bottom 60%",
-    end: "bottom 10%"
-  },
-  backgroundColor: '#eeefef'
-});
-
-tl.from('#page-3', {
-  scrollTrigger: {
-    trigger: "#page-3",
-    scrub: true,
-    start: "top 60%",
+    start: "top 40%",
     end: "top 10%"
   },
-  duration: 1,
   opacity: 0,
-  backgroundColor: '#010000',
+  y: -100,
+  duration: 1,
 });
 
 tl.from('#cool-ball', {
   scrollTrigger: {
     trigger: "#page-3",
     scrub: true,
-    start: "top 60%",
-    end: "top 40%"
+    start: "top 50%",
+    end: "top 10%"
   },
-  y: 100,
-  duration: 1,
-  delay: 2,
-  opacity: 0
+  y: 250,
+  duration: 0.5,
 });
 
 ScrollTrigger.refresh();
 
-
-var contact_btn = document.querySelectorAll(".contact-btn");
-contact_btn.forEach(button => button.addEventListener("click", () => {
-  gsap.to(window, { duration: 1, scrollTo: "#page-3", ease: "power2" });
-}));
+const duration_scroll = 2.0;
 
 // Scroll to top button
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 scrollToTopBtn.addEventListener("click", () => {
-  gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2" });
+  gsap.to(window, { duration: duration_scroll, scrollTo: 0, ease: "power3.inOut" });
 });
 
 

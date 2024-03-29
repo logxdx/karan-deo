@@ -7,10 +7,24 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     loaderContainer.classList.add("hidden");
     pageContent.classList.add("visible");
-    heroimg.style.height = "60%";
+    heroimg.style.height = "55%";
     heroimg.style.opacity = "1";
-  }, 1200);
+  }, 1300);
 });
+
+
+
+
+const lenis = new Lenis({
+  duration: 1.5,
+  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -8 * t))
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+};
+requestAnimationFrame(raf);
 
 
 
@@ -18,10 +32,12 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const tl = gsap.timeline();
 
-tl.from("#main-h1", {
-  duration: 1.25,
+tl.to("#main-h1 .intro h1", {
+  opacity: 1,
+  y: "-10%",
+  stagger: 0.25,
+  duration: 0.5,
   delay: 1.5,
-  opacity: 0,
 })
   .from("#main-p", {
     duration: 1.0,
@@ -57,21 +73,3 @@ var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 scrollToTopBtn.addEventListener("click", () => {
   gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2" });
 });
-
-// $(document).ready(function() {
-//   $("[data-fancybox]").fancybox({
-//     closeExisting: false,
-//     loop: true,
-//     keyboard: true,
-//     buttons: ["slideShow", "zoom", "share", "thumbs", "close"],
-//     arrows: true,
-//     infobar: false,
-//     animationDuration: 400,
-//     animationEffect: "fade",
-//     transitionDuration: 800,
-//     transitionEffect: "fade",
-//     thumbs: {
-//       autoStart: true,
-//     },
-//   });
-// });
