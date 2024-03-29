@@ -50,24 +50,6 @@ const handleRightClick = () => {
 
 
 
-/* -- Mobile Nav Toggle -- */
-
-const nav = document.querySelector("navheader");
-
-const handleNavToggle = () => {  
-  nav.dataset.transitionable = "true";
-  
-  nav.dataset.toggled = nav.dataset.toggled === "true" ? "false" : "true";
-}
-
-window.matchMedia("(max-width: 800px)").onchange = e => {
-  nav.dataset.transitionable = "false";
-
-  nav.dataset.toggled = "false";
-};
-
-
-
 const lenis = new Lenis({
   duration: 1.75,
   easing: (t) => Math.min(1, 1.01 - Math.pow(2, -8 * t))
@@ -110,6 +92,11 @@ tl.from('#cool-ball', {
 ScrollTrigger.refresh();
 
 const duration_scroll = 2.0;
+
+var contact_btn = document.querySelectorAll(".contact-btn");
+contact_btn.forEach(button => button.addEventListener("click", () => {
+  gsap.to(window, { duration: 1, scrollTo: "#page-3", ease: "power2" });
+}));
 
 // Scroll to top button
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
