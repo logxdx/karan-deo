@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Poppins:wght@100..600&family=Bricolage+Grotesque:wght@200..800&family=Unbounded:wght@200..800&family=Syne:wght@400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..700&family=Poppins:wght@100..600&family=Bricolage+Grotesque:wght@200..800&family=Unbounded:wght@200..800&family=Syne:wght@400..800&display=swap");
 
 * {
     margin: 0;
@@ -16,15 +15,15 @@ body::-webkit-scrollbar {
     display: flex;
     inset: 0;
     z-index: 9999;
-    background-color: black;
+    background-color: #000;
     justify-content: center;
     align-items: center;
-    transition: 0.5s ease-out;
+    clip-path: circle(100%);
+    transition: 1s ease-out;
 }
 
 .loader-container.hidden {
-    transform: translate3d(0, -100%, 0);
-    visibility: hidden;
+    clip-path: circle(0% at 50% -10%);
 }
 
 svg {
@@ -34,7 +33,7 @@ svg {
 
 svg text {
     color: white;
-    font-family: "Syne", "Bricolage Grotesque", "Poppins";
+    font-family: "Bricolage Grotesque", "Poppins";
     font-size: clamp(1rem, 5vw, 3rem);
     font-weight: 700;
     stroke-width: 2;
@@ -42,7 +41,7 @@ svg text {
 
 svg text.text-body {
     stroke: white;
-    animation: 1.5s infinite cubic-bezier(0.445, 0.05, 0.55, 0.95) loader;
+    animation: 2s forwards cubic-bezier(0.445, 0.05, 0.55, 0.95) loader;
 }
 
 @keyframes loader {
@@ -50,7 +49,7 @@ svg text.text-body {
         fill: transparent;
         stroke: white;
         stroke-dashoffset: 25%;
-        stroke-dasharray: 0 30%;
+        stroke-dasharray: 0 20%;
     }
 
     35% {
@@ -58,7 +57,7 @@ svg text.text-body {
         stroke: white;
     }
 
-    50%,
+    75%,
     100% {
         fill: white;
         stroke: transparent;
@@ -100,6 +99,7 @@ nav a {
     height: 100%;
     object-fit: cover;
     object-position: center 100%;
+    filter: blur(5px);
     border: none;
     outline: none;
     opacity: 1;
@@ -129,18 +129,16 @@ nav a {
 
 #maintxt {
     position: relative;
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-    min-height: 100vh;
     width: 100%;
     top: 63vh;
+    padding-inline: clamp(2rem, 6vw, 5rem);
+    display: flex;
+    justify-content: space-around;
+    min-height: 100vh;
 }
 
 #main-h1 {
     position: relative;
-    flex-basis: 40%;
-    flex-grow: 0;
 }
 
 .intro {
@@ -148,7 +146,7 @@ nav a {
 }
 
 #main-h1 .intro h1 {
-    font-size: clamp(1rem, 5vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-family: "Syne", "Bricolage Grotesque", "Poppins";
     font-weight: 700;
     color: #111928;
@@ -158,13 +156,14 @@ nav a {
 }
 
 #main-p {
+    width: 30%;
     position: relative;
     top: clamp(1rem, 5vw, 5rem);
-    flex-basis: 30%;
 }
 
 #main-p p {
-    font-size: clamp(0.25rem, 2vw, 1.5rem);
+    font-size: clamp(1.25rem, 2.75vw, 1.75rem);
+    text-align: center;
     font-family: "Syne", sans-serif;
 }
 
@@ -185,48 +184,11 @@ nav a {
     /* visibility: hidden; */
 }
 
-#gallerytxt {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: clamp(0.5rem, 2vw, 3rem) clamp(0.5rem, 2vw, 3rem);    
-    padding-top: 0;
-    cursor: default;
-}
-
-#gallerytxt h1 {
-    position: relative;
-    font-size: clamp(1rem, 5vw, 4rem);
-    font-family: "Syne", "Bricolage Grotesque", "Poppins";
-    font-weight: 500;
-    text-transform: capitalize;
-    color: #111928;
-    padding-bottom: 3rem;
-}
-
-#gallerytxt h1::after {
-    content: "";
-    position: absolute;
-    bottom: clamp(0.5rem, 5vw, 3rem);
-    right: 0;
-    width: 0%;
-    height: 0.25rem;
-    border-radius: 1rem;
-    background-color: #111928;
-    transition: all 0.5s ease-in-out;
-}
-
-#gallerytxt h1:hover:after {
-    width: 100%;
-    left: 0;
-}
-
 .gallery {
     display: grid;
     grid-gap: clamp(1rem, 1vw, 2rem);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 500px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 600px;
     grid-auto-flow: dense;
 }
 .gallery > div {
@@ -235,11 +197,9 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
     border-radius: 10px;
     transition: all 0.4s ease-in-out;
+    overflow: hidden;
 }
 
 .gallery-item::after {
@@ -265,8 +225,9 @@ nav a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
 }
+
 .gallery .tall {
     grid-row: span 2;
 }
@@ -295,40 +256,39 @@ nav a {
     opacity: 1;
 }
 
-
 .fancybox__container {
     --fancybox-color: #0d0c22;
     --fancybox-bg: rgba(0, 0, 0, 0.99);
     --f-spinner-color-1: rgba(0, 0, 0, 0.1);
     --f-spinner-color-2: rgba(17, 24, 28, 0.8);
-  
+
     flex-direction: column-reverse;
-  }
-  
-  .fancybox__toolbar {
+}
+
+.fancybox__toolbar {
     --f-button-bg: #131315;
     --f-button-hover-bg: #e7e7e9;
     --f-button-active-bg: #e7e7e9;
     --f-button-color: #f3f3f3;
     --f-button-hover-color: #0d0c22;
-  
+
     --f-button-border-radius: 8px;
-  
+
     --f-button-svg-width: 20px;
     --f-button-svg-height: 20px;
-  
+
     --f-button-svg-stroke-width: 1.5;
     --f-button-svg-filter: none;
 
     padding: 20px 40px;
     z-index: 10;
-  }
-  
-  .fancybox__slide {
+}
+
+.fancybox__slide {
     padding: 12px 0px;
-  }
-  
-  .fancybox__thumbs.is-classic {
+}
+
+.fancybox__thumbs.is-classic {
     --f-thumb-gap: 3px;
     --f-thumb-width: 88px;
     --f-thumb-height: 66px;
@@ -337,17 +297,110 @@ nav a {
     --f-thumb-outline-color: #ea4c89;
     --f-thumb-border-radius: 6px;
     --f-thumb-offset: 4px;
-  
+
     padding: 10px 100px 10px 26px;
     border-bottom: 2px solid #000000;
-  }
-  
-  /* Align thumbnails on right side if not draggable */
-  .f-thumbs__viewport:not(.is-draggable) .f-thumbs__track {
+}
+
+/* Align thumbnails on right side if not draggable */
+.f-thumbs__viewport:not(.is-draggable) .f-thumbs__track {
     justify-content: flex-end;
-  }
-  
-  .f-thumbs__slide__img {
+}
+
+.f-thumbs__slide__img {
     border-radius: 7px;
-  }
-  
+}
+
+#footer {
+    position: relative;
+    bottom: 3rem;
+    width: 100%;
+    padding-top: 5rem;
+    padding-inline: clamp(2rem, 6vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#footer-left h1 {
+    font-family: "Unbounded", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 4rem);
+    letter-spacing: -0.1rem;
+    line-height: 1;
+    color: #3a3632;
+}
+
+#footer-right button {
+    position: absolute;
+    width: clamp(2.75rem, 8vw, 6rem);
+    aspect-ratio: 1;
+    right: clamp(3rem, 6vw, 6rem);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #bebeb1;
+    border: none;
+    border-radius: 50%;
+}
+
+#footer-right button span i {
+    position: relative;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    color: #3a3632;
+    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#footer-right button:hover span i {
+    animation: scrollToTop 0.6s ease-in-out;
+}
+
+@keyframes scrollToTop {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100%) scale(0);
+    }
+
+    55% {
+        transform: translateY(100%) scale(0);
+    }
+}
+
+@media (max-width : 800px) {
+    #main-p {
+        width: 40%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    #maintxt {
+        top: 60vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #main-p {
+        padding-top: 2rem;
+        width: 70%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 400px;
+    }
+
+    .gallery .tall {
+        grid-row: span 1;
+    }
+
+    .gallery .wide {
+        grid-column: span 1;
+    }
+}

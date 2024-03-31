@@ -1,366 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="./images/android-chrome-512x512.png" type="image/x-icon" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-        />
-        <link rel="stylesheet" href="gallery.css" />
-        <title>Karan Deo</title>
-    </head>
 
-    <body>
-        <div class="loader-container">
-            <svg viewBox="0 0 400 160">
-                <text x="50%" y="50%" dy="0.01em" text-anchor="middle" class="text-body">
-                    gallery
-                </text>
-            </svg>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/android-chrome-512x512.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <link rel="stylesheet" href="gallery.css" />
+    <title>Karan Deo</title>
+</head>
+
+<body>
+    <div class="loader-container">
+        <svg viewBox="0 0 400 160">
+            <text x="50%" y="50%" dy="0.01em" text-anchor="middle" class="text-body">
+                gallery
+            </text>
+        </svg>
+    </div>
+
+    <div id="main">
+
+        <div id="nav">
+            <nav>
+                <a href="/" class="nav-link"><i class="fa-solid fa-arrow-left" style="color: #111928"></i></a>
+            </nav>
         </div>
 
-        <div id="main">
-            <div id="nav">
-                <nav>
-                    <a href="/" class="nav-link"
-                        ><i class="fa-solid fa-arrow-left" style="color: #111928"></i
-                    ></a>
-                </nav>
-            </div>
-
-            <div id="heroimg">
-                <img src="./images/works/hero.webp" alt="hero image" class="hero-image" />
-                <div class="hero-text">
-                    <h1>gallery</h1>
-                </div>
-            </div>
-
-            <div id="maintxt">
-                <div id="main-h1">
-                    <div class="intro"><h1>I'm a</h1></div>
-                    <div class="intro"><h1>Photographer</h1></div>
-                    <div class="intro"><h1>& Wanderer</h1></div>
-                </div>
-
-                <div id="main-p">
-                    <p>
-                        When words become unclear, I shall focus with photographs. When images
-                        become inadequate, I shall be content with silence.
-                    </p>
-                </div>
-            </div>
-
-            <div id="hr"></div>
-
-            <div class="gallery-container">
-                <div id="gallerytxt">
-                    <h1>selected works</h1>
-                </div>
-
-                <div class="gallery">
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/1.webp"
-                    >
-                        <img src="./images/works/1.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/2.webp"
-                    >
-                        <img src="./images/works/2.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/3.webp"
-                    >
-                        <img src="./images/works/3.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/4.webp"
-                    >
-                        <img src="./images/works/4.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/5.webp"
-                    >
-                        <img src="./images/works/5.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/6.webp"
-                    >
-                        <img src="./images/works/6.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/7.webp"
-                    >
-                        <img src="./images/works/7.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/8.webp"
-                    >
-                        <img src="./images/works/8.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/9.webp"
-                    >
-                        <img src="./images/works/9.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/10.webp"
-                    >
-                        <img src="./images/works/10.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/11.webp"
-                    >
-                        <img src="./images/works/11.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/12.webp"
-                    >
-                        <img src="./images/works/12.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/13.webp"
-                    >
-                        <img src="./images/works/13.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/14.webp"
-                    >
-                        <img src="./images/works/14.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/15.webp"
-                    >
-                        <img src="./images/works/15.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/16.webp"
-                    >
-                        <img src="./images/works/16.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/17.webp"
-                    >
-                        <img src="./images/works/17.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/18.webp"
-                    >
-                        <img src="./images/works/18.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/19.webp"
-                    >
-                        <img src="./images/works/19.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/20.webp"
-                    >
-                        <img src="./images/works/20.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/21.webp"
-                    >
-                        <img src="./images/works/21.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/22.webp"
-                    >
-                        <img src="./images/works/22.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/23.webp"
-                    >
-                        <img src="./images/works/23.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/24.webp"
-                    >
-                        <img src="./images/works/24.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/25.webp"
-                    >
-                        <img src="./images/works/25.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/26.webp"
-                    >
-                        <img src="./images/works/26.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/27.webp"
-                    >
-                        <img src="./images/works/27.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                    <div
-                        class="gallery-item"
-                        data-fancybox="gallery"
-                        data-src="./images/works/28.webp"
-                    >
-                        <img src="./images/works/28.webp" alt="gallery-item" loading="lazy" />
-                        <span class="zoom">zoom</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="footer">
-                <div id="footer-left">
-                    <h1>
-                        © 2024 <br />
-                        K. D. Burnwal
-                    </h1>
-                </div>
-
-                <div id="time">
-                    Local Time <br />
-                    <p id="currTime"></p>
-                </div>
-
-                <div id="footer-right">
-                    <button aria-label="Scroll to top" id="scrollToTopBtn">
-                        <a
-                            ><span id="scroll-to-top">
-                                <!-- <img alt="" loading="lazy" src="./images/arrow.3054c3ee.svg"> -->
-                                <i class="fa-solid fa-arrow-up"></i> </span
-                        ></a>
-                    </button>
-                </div>
+        <div id="heroimg">
+            <img src="./images/works/hero_.webp" alt="hero image" class="hero-image" loading="lazy"/>
+            <div class="hero-text">
+                <h1>gallery</h1>
             </div>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-        <script src="./gallery.js"></script>
+        <div id="maintxt">
+            <div id="main-h1">
+                <div class="intro">
+                    <h1>I'm a</h1>
+                </div>
+                <div class="intro">
+                    <h1>Photographer</h1>
+                </div>
+                <div class="intro">
+                    <h1>& Wanderer</h1>
+                </div>
+            </div>
 
-        <script>
-            Fancybox.bind('[data-fancybox="gallery"]', {
-                compact: false,
-                idle: false,
-                infobar: true,
-                animated: true,
-                showClass: false,
-                hideClass: false,
-                contentClick: false,
-                dragToClose: false,
+            <div id="main-p">
+                <p>
+                    When words become unclear, I shall focus with photographs. When images
+                    become inadequate, I shall be content with silence.
+                </p>
+            </div>
+        </div>
 
-                Images: {
-                    zoom: false,
+        <div id="hr"></div>
+
+        <div class="gallery-container">
+
+            <div class="gallery">
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/1.webp">
+                    <img src="./images/works/1.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/2.webp">
+                    <img src="./images/works/2.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/3.webp">
+                    <img src="./images/works/3.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/4.webp">
+                    <img src="./images/works/4.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/5.webp">
+                    <img src="./images/works/5.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/6.webp">
+                    <img src="./images/works/6.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/7.webp">
+                    <img src="./images/works/7.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/8.webp">
+                    <img src="./images/works/8.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/9.webp">
+                    <img src="./images/works/9.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/10.webp">
+                    <img src="./images/works/10.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/11.webp">
+                    <img src="./images/works/11.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/12.webp">
+                    <img src="./images/works/12.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/13.webp">
+                    <img src="./images/works/13.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/14.webp">
+                    <img src="./images/works/14.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/15.webp">
+                    <img src="./images/works/15.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/16.webp">
+                    <img src="./images/works/16.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/17.webp">
+                    <img src="./images/works/17.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/18.webp">
+                    <img src="./images/works/18.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/19.webp">
+                    <img src="./images/works/19.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/20.webp">
+                    <img src="./images/works/20.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/21.webp">
+                    <img src="./images/works/21.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/22.webp">
+                    <img src="./images/works/22.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/23.webp">
+                    <img src="./images/works/23.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/24.webp">
+                    <img src="./images/works/24.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/25.webp">
+                    <img src="./images/works/25.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/26.webp">
+                    <img src="./images/works/26.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/27.webp">
+                    <img src="./images/works/27.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/28.webp">
+                    <img src="./images/works/28.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/29.webp">
+                    <img src="./images/works/29.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/30.webp">
+                    <img src="./images/works/30.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/31.webp">
+                    <img src="./images/works/31.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item wide" data-fancybox="gallery" data-src="./images/works/32.webp">
+                    <img src="./images/works/32.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+                
+                <div class="gallery-item" data-fancybox="gallery" data-src="./images/works/33.webp">
+                    <img src="./images/works/33.webp" alt="gallery-item" loading="lazy" />
+                    <span class="zoom">zoom</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="footer">
+
+        <div id="footer-left">
+            <h1> © 2024 <br> K. D. Burnwal </h1>
+        </div>
+
+        <div id="footer-right">
+            <button aria-label="Scroll to top" id="scrollToTopBtn">
+
+                <a><span id="scroll-to-top">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </span></a>
+
+            </button>
+        </div>
+
+    </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="./gallery.js"></script>
+
+    <script>
+        Fancybox.bind('[data-fancybox="gallery"]', {
+            compact: false,
+            idle: false,
+            infobar: true,
+            animated: true,
+            showClass: false,
+            hideClass: false,
+            contentClick: false,
+            dragToClose: false,
+
+            Images: {
+                zoom: false,
+            },
+
+            Toolbar: {
+                display: {
+                    left: ["prev", "next"],
+                    middle: ["slideshow"],
+                    right: ["close"],
                 },
+            },
 
-                Toolbar: {
-                    display: {
-                        left: ["prev", "next"],
-                        middle: ["slideshow"],
-                        right: ["close"],
-                    },
-                },
-
-                Thumbs: {
-                    type: "modern",
-                    Carousel: {
-                        center: function () {
-                            return this.contentDim < this.viewportDim;
-                        },
-                    },
-                },
-
+            Thumbs: {
+                type: "modern",
                 Carousel: {
-                    // Remove the navigation arrows
-                    Navigation: false,
+                    center: function () {
+                        return true;
+                    },
                 },
-            });
-        </script>
-    </body>
+            },
+
+            Carousel: {
+                // Remove the navigation arrows
+                Navigation: false,
+            },
+        });
+    </script>
+
+</body>
+
 </html>

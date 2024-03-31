@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
     pageContent.classList.add("visible");
     heroimg.style.height = "55%";
     heroimg.style.opacity = "1";
-  }, 1300);
+  }, 1200);
 });
 
 
@@ -36,13 +36,14 @@ tl.to("#main-h1 .intro h1", {
   opacity: 1,
   y: "-10%",
   stagger: 0.25,
-  duration: 0.5,
-  delay: 1.5,
+  duration: 0.75,
+  delay: 1.75,
 })
   .from("#main-p", {
-    duration: 1.0,
+    y: 100,
     opacity: 0,
-    delay: -0.5,
+    duration: 1.0,
+    delay: -0.75,
   });
 
 gsap.from(".gallery-container", {
@@ -71,5 +72,5 @@ gsap.to("#maintxt", {
 // Scroll to top button
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 scrollToTopBtn.addEventListener("click", () => {
-  gsap.to(window, { duration: 1, scrollTo: 0, ease: "power2" });
+  gsap.to(window, { duration: 3, scrollTo: 0, ease: "power3.inOut" });
 });

@@ -9,7 +9,7 @@ cd /d "%folderPath%" || exit /b
 
 set /a counter=1
 for %%f in (*%extension%) do (
-    ffmpeg -i !counter!.webp -vf scale=1600:-1 !counter!_.webp
+    ffmpeg -i !counter!_!extension! -vf scale=1000:-1 !counter!!extension!
     set /a counter+=1
 )
 

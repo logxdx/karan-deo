@@ -5,7 +5,7 @@ window.addEventListener("load", () => {
     setTimeout(() => {
         loaderContainer.classList.add("hidden");
         pageContent.classList.add("visible");
-    }, 1500);
+    }, 1600);
 });
 
 
@@ -52,7 +52,7 @@ const handleRightClick = () => {
 
 const lenis = new Lenis({
   duration: 1.75,
-  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -8 * t))
+  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -7 * t))
 });
 
 function raf(time) {
@@ -70,7 +70,7 @@ tl.to('#page-1', {
   scrollTrigger: {
     trigger: "navheader",
     scrub: true,
-    start: "top 40%",
+    start: "top 20%",
     end: "top 10%"
   },
   opacity: 0,
@@ -81,9 +81,9 @@ tl.to('#page-1', {
 tl.from('#cool-ball', {
   scrollTrigger: {
     trigger: "#page-3",
-    scrub: true,
     start: "top 50%",
-    end: "top 10%"
+    end: "top 10%",
+    scrub: true,
   },
   y: 250,
   duration: 0.5,
@@ -95,7 +95,7 @@ const duration_scroll = 2.0;
 
 var contact_btn = document.querySelectorAll(".contact-btn");
 contact_btn.forEach(button => button.addEventListener("click", () => {
-  gsap.to(window, { duration: 1, scrollTo: "#page-3", ease: "power2" });
+  gsap.to(window, { duration: 1, scrollTo: "#page-3", ease: "power3.out" });
 }));
 
 // Scroll to top button
