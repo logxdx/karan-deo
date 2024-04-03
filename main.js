@@ -52,7 +52,8 @@ const handleRightClick = () => {
 
 const lenis = new Lenis({
   duration: 1.75,
-  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -7 * t))
+  easing: (t) => Math.min(1, 1.1 - Math.pow(2, -8 * t)),
+  smooth: true,
 });
 
 function raf(time) {
@@ -62,8 +63,8 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);  
 
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 var tl = gsap.timeline();
 
 tl.to('#page-1', {
