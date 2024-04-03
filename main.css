@@ -52,7 +52,7 @@ svg {
 svg text {
     color: white;
     font-family: "Bricolage Grotesque", "Poppins";
-    font-size: clamp(1rem, 5vw, 3rem);
+    font-size: clamp(2rem, 8vw, 3rem);
     font-weight: 700;
     stroke-width: 2;
 }
@@ -63,7 +63,8 @@ svg text.text-body {
 }
 
 @keyframes loader {
-    0%, 20% {
+    0%,
+    20% {
         fill: transparent;
         stroke: white;
         stroke-dashoffset: 25%;
@@ -356,7 +357,7 @@ maincontent > article > .article-section {
     display: flex;
     height: 100%;
     background-color: var(--background-color);
-    border-right: 1px solid var(--border-color);
+    border-inline: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -462,22 +463,25 @@ maincontent > article > .article-nav-section > .article-nav-button {
     transition: all 0.3s ease;
 }
 
-.left-arrow, .right-arrow {
+.left-arrow,
+.right-arrow {
     display: grid;
     place-items: center;
     fill: var(--text-color);
 }
 
-.left-arrow svg, .right-arrow svg {
-    width: 50%;
-    transition: all 0.s ease;
+.left-arrow svg,
+.right-arrow svg {
+    width: 45%;
+    transition: all 0s ease;
 }
 
 maincontent > article > .article-nav-section > .article-nav-button:hover {
     color: var(--background-color);
     background-color: var(--text-color);
 
-    .left-arrow, .right-arrow {
+    .left-arrow,
+    .right-arrow {
         fill: var(--background-color);
     }
 }
@@ -569,7 +573,6 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     width: 100%;
     left: 0;
 }
-
 
 #contact-links {
     position: relative;
@@ -669,11 +672,11 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     }
 
     50% {
-        transform: translateY(-150%) scale(0);
+        transform: translateY(-100%) scale(0);
     }
 
     55% {
-        transform: translateY(150%) scale(0);
+        transform: translateY(100%) scale(0);
     }
 }
 
@@ -693,7 +696,6 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
 }
 
 @media (max-width: 800px) {
-
     #moving-text h1 {
         font-size: 8rem;
         letter-spacing: -0.5rem;
@@ -801,21 +803,18 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     }
 }
 
-
 @media (max-width: 480px) {
-
     maincontent > article > .article-title-section > h2 {
         font-size: 1.6rem;
     }
 
     maincontent > article > .article-description-section {
         padding-inline: 10%;
-    }    
+    }
 
     maincontent > article > .article-description-section > p {
         padding-block: 0.25rem;
-        font-size: 0.25rem;
-        line-height: 1.5;
+        font-size: 1rem;
     }
 
     #skills h3 {
@@ -846,31 +845,39 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
         font-size: 0.75rem;
     }
 
+    #footer-right button span svg {
+        position: relative;
+        transform: scale(0.8);
+        fill: #3a3632;
+        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    #footer-right button:hover span svg {
+        animation: none;
+    }
+
     #time {
         display: none;
     }
 }
 
-
-
-
-
-html.lenis, html.lenis body {
+html.lenis,
+html.lenis body {
     height: auto;
-  }
-  
-  .lenis.lenis-smooth {
+}
+
+.lenis.lenis-smooth {
     scroll-behavior: auto !important;
-  }
-  
-  .lenis.lenis-smooth [data-lenis-prevent] {
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
     overscroll-behavior: contain;
-  }
-  
-  .lenis.lenis-stopped {
+}
+
+.lenis.lenis-stopped {
     overflow: hidden;
-  }
-  
-  .lenis.lenis-scrolling iframe {
+}
+
+.lenis.lenis-scrolling iframe {
     pointer-events: none;
-  }
+}
