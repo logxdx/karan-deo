@@ -357,7 +357,7 @@ maincontent > article > .article-section {
     display: flex;
     height: 100%;
     background-color: var(--background-color);
-    border-inline: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -463,6 +463,10 @@ maincontent > article > .article-nav-section > .article-nav-button {
     transition: all 0.3s ease;
 }
 
+maincontent > article > .article-nav-section > .article-nav-button:last-child {
+    border-right: none;
+}
+
 .left-arrow,
 .right-arrow {
     display: grid;
@@ -472,7 +476,7 @@ maincontent > article > .article-nav-section > .article-nav-button {
 
 .left-arrow svg,
 .right-arrow svg {
-    width: 45%;
+    width: 50%;
     transition: all 0s ease;
 }
 
@@ -654,11 +658,13 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     border-radius: 50%;
 }
 
-#footer-right button span svg {
+#footer-right button span {
     position: relative;
+    display: grid;
+    place-items: center;
     transform: scale(1.25);
     fill: #3a3632;
-    transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #footer-right button:hover span svg {
@@ -668,14 +674,14 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
 @keyframes scrollToTop {
     0%,
     100% {
-        transform: translateY(0) scale(1.25);
+        transform: translateY(0);
     }
 
-    50% {
+    48% {
         transform: translateY(-100%) scale(0);
     }
 
-    55% {
+    52% {
         transform: translateY(100%) scale(0);
     }
 }
@@ -767,6 +773,13 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
 
     maincontent > article > .article-description-section > p {
         font-size: 1.5rem;
+    }
+
+    maincontent > article > .article-nav-section > .article-nav-button {
+        .left-arrow svg,
+        .right-arrow svg {
+            width: 30%;
+        }
     }
 
     #skills h3 {
