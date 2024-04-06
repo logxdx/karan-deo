@@ -858,17 +858,6 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
         font-size: 0.75rem;
     }
 
-    #footer-right button span svg {
-        position: relative;
-        transform: scale(0.8);
-        fill: #3a3632;
-        transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-
-    #footer-right button:hover span svg {
-        animation: none;
-    }
-
     #time {
         display: none;
     }
