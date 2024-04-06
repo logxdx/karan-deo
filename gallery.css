@@ -34,7 +34,7 @@ svg {
 svg text {
     color: white;
     font-family: "Bricolage Grotesque", "Poppins";
-    font-size: clamp(1rem, 5vw, 3rem);
+    font-size: clamp(2rem, 8vw, 3rem);
     font-weight: 700;
     stroke-width: 2;
 }
@@ -381,7 +381,7 @@ nav a {
 @media (max-width: 450px) {
 
     #maintxt {
-        top: 60vh;
+        top: 55vh;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
