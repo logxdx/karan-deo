@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&family=Bricolage+Grotesque:wght@300;400;500;600;700;800&family=Unbounded:wght@200;300;400;500;600;700&display=swap");
 
 :root {
-    --background-color: #000000;
+    
+    /* --background-color: #000000;
     --border-color: rgba(255, 255, 255, 1);
-    --text-color: #f7e7be;
-    --background-color: #000000;
+    --text-color: #afa3d5;
+    --underline-color: var(--text-color); */
+    
+    --background-color: #2e2c39;
+    --border-color: #fff;
+    --text-color: #e7e3f1;
     --underline-color: var(--text-color);
 }
 
@@ -21,7 +26,7 @@ html {
 }
 
 body {
-    background-color: #e6e7e0;
+    background-color: var(--text-color);
 }
 
 body::-webkit-scrollbar {
@@ -33,7 +38,7 @@ body::-webkit-scrollbar {
     display: flex;
     inset: 0;
     z-index: 9999;
-    background-color: #000;
+    background-color: var(--background-color);
     justify-content: center;
     align-items: center;
     clip-path: circle(100%);
@@ -118,12 +123,13 @@ svg text.text-body {
     font-size: clamp(1.25rem, 5vw, 2rem);
     font-weight: 400;
     font-family: "Unbounded", "Poppins", sans-serif;
+    color: var(--background-color);
     cursor: default;
 }
 
 #navRight a {
     position: relative;
-    color: black;
+    color: var(--background-color);
     font-family: "Unbounded", sans-serif;
     font-size: clamp(0.25rem, 4vw, 1.5rem);
     text-decoration: none;
@@ -136,7 +142,7 @@ svg text.text-body {
     right: 0;
     width: 0;
     height: 1.5px;
-    background-color: black;
+    background-color: var(--background-color);
     transform-origin: left;
     transition: all 0.5s ease;
 }
@@ -154,6 +160,7 @@ svg text.text-body {
 }
 
 #moving-text {
+    color: var(--background-color);
     overflow: hidden;
 }
 
@@ -213,12 +220,12 @@ svg text.text-body {
 }
 
 .moving-container:nth-child(odd) {
-    color: white;
-    background-color: #000;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 .moving-container:nth-child(odd) #breaker-circle {
-    background-color: #000;
+    background-color: var(--background-color);
 }
 
 #page-2 {
@@ -389,7 +396,6 @@ maincontent > article > .article-image-section {
 maincontent > article > .article-description-section {
     flex-direction: column;
     justify-content: center;
-    text-align: justify;
     padding: clamp(0.5rem, 1.5vw, 2rem) clamp(0.5rem, 3vw, 12rem);
 }
 
@@ -495,7 +501,7 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     display: flex;
     justify-content: center;
     min-height: 100vh;
-    background-color: var(--border-color);
+    background-color: var(--text-color);
     overflow: hidden;
 }
 
@@ -512,8 +518,9 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     left: 0;
     padding-inline: 0.5rem;
     font-size: calc(100vw / 5);
-    color: rgba(0, 0, 0, 0.1);
-    transform: translateY(-40%);
+    color: var(--background-color);
+    opacity: 0.4;
+    transform: translateY(-50%);
 }
 
 #contact-container {
@@ -525,14 +532,6 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     justify-content: center;
 }
 
-#cool-ball {
-    position: absolute;
-    width: 100%;
-    top: 10%;
-    left: 50%;
-    z-index: 0;
-}
-
 #collab {
     position: relative;
     bottom: clamp(7rem, 20vw, 12rem);
@@ -540,7 +539,7 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
 }
 
 #collab span {
-    color: #6c645f;
+    color: var(--background-color);
     font-size: clamp(0.5rem, 3.5vw, 3rem);
     font-weight: 600;
 }
@@ -568,7 +567,7 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     right: 0;
     width: 0%;
     height: 0.5rem;
-    background-color: #383633;
+    background-color: var(--background-color);
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
 }
@@ -642,7 +641,7 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     font-size: clamp(2rem, 6vw, 4rem);
     letter-spacing: -0.1rem;
     line-height: 1;
-    color: #3a3632;
+    color: var(--background-color);
 }
 
 #footer-right button {
@@ -653,7 +652,7 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     bottom: 0;
     display: grid;
     place-items: center;
-    background-color: #bebeb1;
+    background-color: var(--background-color);
     border: none;
     border-radius: 50%;
 }
@@ -662,8 +661,8 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     position: relative;
     display: grid;
     place-items: center;
-    transform: scale(1.25);
-    fill: #3a3632;
+    transform: scale(1.5);
+    fill: var(--text-color);
     transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -849,13 +848,17 @@ maincontent > article > .article-nav-section > .article-nav-button:hover {
     #contact-links {
         flex-direction: column;
         gap: 0rem;
-        transform: translateY(0);
+        transform: translateY(20%);
     }
 
     #contact-links .connect {
         left: -3rem;
         bottom: 0rem;
         font-size: 0.75rem;
+    }
+
+    #footer-right button span {
+        transform: scale(0.8);
     }
 
     #time {

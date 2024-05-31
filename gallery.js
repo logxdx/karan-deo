@@ -16,8 +16,7 @@ window.addEventListener("load", () => {
 
 
 const lenis = new Lenis({
-  duration: 1.5,
-  easing: (t) => Math.min(1, 1.01 - Math.pow(2, -8 * t))
+  lerp: 0.05,
 });
 
 function raf(time) {

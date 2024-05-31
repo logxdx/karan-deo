@@ -51,9 +51,7 @@ const handleRightClick = () => {
 
 
 const lenis = new Lenis({
-  duration: 1.75,
-  easing: (t) => Math.min(1, 1.1 - Math.pow(2, -8 * t)),
-  smooth: true,
+  lerp: 0.05,
 });
 
 function raf(time) {
